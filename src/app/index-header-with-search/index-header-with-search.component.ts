@@ -10,6 +10,7 @@ export class IndexHeaderWithSearchComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // This is a test message
   }
 
 }
