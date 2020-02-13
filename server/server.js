@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use('/api', apiAllRoutes);
 
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`Listening port is ${ port }`);
 });

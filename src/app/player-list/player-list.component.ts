@@ -23,9 +23,9 @@ export class PlayerListComponent implements OnInit {
         .subscribe( players =>{
           this.players = players[0];
           this.sport_name = this.players[0].sport_name;
-        },
+        },   
         err=>{
-          this.Router.navigate(["Not Found"])
+          
         })
   }
 }

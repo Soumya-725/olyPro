@@ -17,7 +17,7 @@ router.get('/sports/:sport_id', getAllPlayersInSport);
 router.get('/player/:player_id', getPlayerDetails);
 router.get('/search/:data', searchAll);
 router.get('/insta/:username', getInsta);
-router.get('/uTube/:userId', getUTube);
+router.get('/uTube/:keyword', getUTube);
 router.get('/twit/:username', getTwit);
 
 module.exports = router;
