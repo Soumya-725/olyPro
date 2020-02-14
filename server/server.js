@@ -1,6 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-const bodyParser = require('body-parser');
+
 
 const cors = require('cors')
 const corsConfig = {
@@ -17,7 +17,6 @@ const apiAllRoutes = require('./routes/apiRoutes');
 
 app.use(cors(corsConfig))
 app.use(morgan('dev'));
-app.use(bodyParser.json());
 app.use('/api', apiAllRoutes);
 
 
