@@ -22,22 +22,24 @@ a{
 .index-header{
     overflow: auto;
 }
-.index-header-logo{
+.index-header-logo {
     margin-top:118px;
     text-align: center;
     margin-bottom: 20px;
+}
+.index-header-logo img {
     cursor: pointer;
 }
-.search-bar-container{
+.search-bar-container {
     margin: 20px 0;
     display: flex;
     justify-content: center;
 }
-.search-bar{
+.search-bar {
     display: inline-block;
     position: relative;
 }
-.search-bar input{
+.search-bar input {
     padding: 15px;
     width: 500px;
     border-radius: 5px;
@@ -45,7 +47,7 @@ a{
     outline: none;
     border: 1px solid #d2d2d2;
 }
-.search-bar button{
+.search-bar button {
     position: absolute;
     background: none;
     border: none;
@@ -55,18 +57,18 @@ a{
     font-size: 23px;
     color: #ea2127;
 }
-.sports-container{
+.sports-container {
     padding: 44px;
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
 }
-.sports-card-container{
+.sports-card-container {
     display: inline-flex;
     flex-wrap: wrap;
     max-width: 1230px;
 }
-.sports-card{
+.sports-card {
     cursor: pointer;
     margin: 15px;
     padding:47px 0;
@@ -76,7 +78,7 @@ a{
     border: 1px solid #d2d2d2;
     background-color: #ffffff;
 }
-.card-data{
+.card-data {
     width: 100%;
 }
 
@@ -97,11 +99,11 @@ a{
     margin-top: 25px;
     cursor: pointer;
 }
-.picture1 img{
+.picture1 img {
     overflow: hidden;
     border-radius: 50%;
 }
-.player-name{
+.player-name {
     display: inline-block;
     margin-left: 5px;
     transform: translateY(-80%);
@@ -110,14 +112,14 @@ a{
     font-weight: normal;
     padding-bottom: 10px;
 }
-.player-name .img-wrap{
+.player-name .img-wrap {
     overflow: hidden;
     border-radius: 50%;
     width: 60px;
     border: 1px solid black;
     height: 60px;
 }
-.player-name .img-wrap img{
+.player-name .img-wrap img {
     width: 60px;
 }
 .player-name4 {
@@ -134,10 +136,10 @@ a{
     color: #ea2127;
     padding-left: 5px;
 }
-.picture2 img{
+.picture2 img {
     overflow: hidden;
 }
-.picture3 img{
+.picture3 img {
     overflow: hidden;
     border-radius: 50%;
     background-color: #444444;
@@ -151,17 +153,17 @@ a{
     font-weight: bold;
     background-color: #444444;
 }
-.picture5 img{
+.picture5 img {
     overflow: hidden;
     border-radius: 50%;
     background-color: #444444;
 }
-.picture6 img{
+.picture6 img {
     overflow: hidden;
     border-radius: 50%;
 }
 
-.player-profile-page-container{
+.player-profile-page-container {
     background-color: #f2f2f2;
     display: flex;
     justify-content: center;
@@ -195,17 +197,17 @@ a{
     margin-left: 9px;
     margin-right: 9px;
 }
-.player-name{
+.player-name {
     margin-top: 56px;
     display: inline-flex;
     
     
 }
-.player-list{
+.player-list {
  height: 55px;
  padding-bottom: 30px;
 }
-.socialLoading{
+.socialLoading {
     position:absolute;
     top: 0;
     bottom: 0;
@@ -219,7 +221,7 @@ a{
     border-style: solid;
     border-width: 1px;
 }
-.player-name-txt{
+.player-name-txt {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
     margin-left:10px ;
@@ -231,7 +233,7 @@ div.player-account-single {
     float: left;
     width: 380px;
 }
-.txt-twitter{
+.txt-twitter {
     color: rgb(42, 179, 231);
 }
 .img-accounts {
@@ -239,7 +241,7 @@ div.player-account-single {
     width: auto;
     padding-bottom: 20px;
 }
-.txt-youtube{
+.txt-youtube {
     color: rgb(206, 40, 42);
 }
 .txt-insta{
