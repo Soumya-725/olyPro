@@ -76,7 +76,7 @@ exports.searchAll = (req,res)=>{
 exports.getUTube =  (req, res) =>{
     youTube.search(req.params.keyword, 10, ((error, result)=> {
         if (error) {
-          console.log('error');
+          console.log(error);
         }
         else {
           res.send(result.items, null, 10);
