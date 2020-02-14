@@ -283,6 +283,50 @@ div.player-account-single {
     color: #fff;
 }
 
+.insta-content {
+    padding: 5px 3px 8px 3px;
+    border-bottom: 1px solid;
+    border-bottom-color: rgb(210, 213, 213);
+}
+.insta-content p {
+    padding-bottom: 3px;
+    padding-left: 10px;
+}
+.insta-content a img {
+    border-radius: 10px;
+}
+.insta-img-conteiner .img-blur span.insta-like {
+    color: white;
+    top: 50%;
+    left: 25%;
+    /* opacity: 0.9; */
+}
+.insta-img-conteiner .img-blur span.insta-comment {
+    color: white;
+    top: 50%;
+    left: 30%;
+    /* opacity: 0.9; */
+}
+.insta-img-conteiner{
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.insta-img-conteiner:hover .img-blur{
+    display: inline-block;
+}
+.img-blur{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 3px);
+    z-index: 10;
+    background-color:#00000050;
+    display: none;
+}
+
 footer{
     padding: 25px;
     background-color: #fff;

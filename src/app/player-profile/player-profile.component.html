@@ -67,8 +67,18 @@
                 <img src="https://cdn.dribbble.com/users/2475489/screenshots/9553468/1-instagram.gif" alt="" class="socialLoading" *ngIf="isSocialLoading">
                 <ul>
                     <li *ngFor="let insta of instas">
-                        <p style="width: 100px">{{insta.node.thumbnail_resources[1].src}}</p>
-                        <img src="{{insta.node.thumbnail_resources[1].src}}" alt="" width="100%">
+                        <div class="insta-content">
+                            <p style="width: 100%">Lacation: {{insta.node.location.name}}</p>
+                            <a href="https://www.instagram.com/p/{{insta.node.shortcode}}/">
+                                <div class="insta-img-conteiner">
+                                <img src="{{insta.node.display_url}}" alt="" width="100%">
+                                <div class="img-blur">
+                                    <span class="insta-like">&#9829; {{ insta.node.edge_liked_by.count }} </span>
+                                    <span class="insta-comment">&#10054; {{ insta.node.edge_media_to_comment.count }}</span>
+                                </div>
+                                </div>
+                            </a>
+                        </div>
                     </li>
                 </ul>
             </div>

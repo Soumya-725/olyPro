@@ -48,8 +48,12 @@ exports.getAllPlayersInSport = (req, res) => {
 exports.getInsta = (req, res) =>{
     (async () => {
         await iClient.login()
-        const profile = await iClient.getUserByUsername({username:req.params.username})
-        res.send(profile.edge_owner_to_timeline_media.edges)
+            await iClient.getUserByUsername({username:req.params.username})
+            .then(
+                val => res.send(val.edge_owner_to_timeline_media.edges),
+                err=> console.log(err)
+            )
+        
       })()
 }
 
@@ -86,7 +90,8 @@ exports.getUTube =  (req, res) =>{
 
 exports.getTwit = async (req, res) =>{
     await latestTweets(`${req.params.username}`, (err, tweets)=>{
-        res.send(tweets);
+        if(!err) res.send(tweets);
+        else console.log(err)    
     })
 }
 
