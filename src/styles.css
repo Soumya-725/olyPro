@@ -286,17 +286,15 @@ div.player-account-single {
 }
 
 .insta-content {
-    padding: 5px 3px 8px 3px;
     border-bottom: 1px solid;
     border-bottom-color: rgb(210, 213, 213);
 }
+
 .insta-content p {
     padding-bottom: 3px;
     padding-left: 10px;
 }
-.insta-content a img {
-    border-radius: 10px;
-}
+
 .insta-img-conteiner .img-blur span.insta-like {
     color: white;
     top: 50%;
@@ -312,8 +310,7 @@ div.player-account-single {
 .insta-img-conteiner{
     display: inline-block;
     position: relative;
-    overflow: hidden;
-    border-radius: 10px;
+
 }
 .insta-img-conteiner:hover .img-blur{
     display: inline-block;
@@ -327,6 +324,17 @@ div.player-account-single {
     z-index: 10;
     background-color:#00000050;
     display: none;
+}
+
+.nf-img{
+    position: absolute;
+    display: inline-block;
+    height: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
 }
 
 footer{

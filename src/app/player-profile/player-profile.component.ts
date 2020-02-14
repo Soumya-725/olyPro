@@ -50,7 +50,7 @@ export class PlayerProfileComponent implements OnInit {
             // console.log(tData)
             this.twitters = tData;
             this.loadingCount++; 
-            if(this.loadingCount >= 2 ){
+            if(this.loadingCount >= 3 ){
               this.isSocialLoading = false;
             }
           },
@@ -63,7 +63,7 @@ export class PlayerProfileComponent implements OnInit {
             // console.log(tData)
             this.instas = tData;
             this.loadingCount++; 
-            if(this.loadingCount >= 2 ){
+            if(this.loadingCount >= 3 ){
               this.isSocialLoading = false;
               
             }

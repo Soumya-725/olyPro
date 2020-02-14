@@ -1,17 +1,23 @@
 const insta = require('instagram-web-api')
 const latestTweets = require('latest-tweets')
-const https = require('https')
 
 
 
 const YouTube = require('youtube-node');
 const youTube = new YouTube();
+<<<<<<< HEAD
+youTube.setKey('AIzaSyC21gqnc2mgRM868_nMwBeaiHQ0L2QISwQ');
+=======
 youTube.setKey('AIzaSyCwY8yJMczRAEHjWcTRskFf5fxrHD6fA');
+>>>>>>> 95a783eaeeb83bff3fcdebf2376efb80a67eba17
 
 
 
 
+<<<<<<< HEAD
+=======
     
+>>>>>>> 95a783eaeeb83bff3fcdebf2376efb80a67eba17
 const { mySQLConn } = require('../dbConnectivity/dbConnection');
 
 const iClient = new insta({ 
