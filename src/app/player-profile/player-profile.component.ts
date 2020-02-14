@@ -50,7 +50,7 @@ export class PlayerProfileComponent implements OnInit {
             // console.log(tData)
             this.twitters = tData;
             this.loadingCount++; 
-            if(this.loadingCount >= 3 ){
+            if(this.loadingCount >= 2 ){
               this.isSocialLoading = false;
             }
           },
@@ -63,7 +63,7 @@ export class PlayerProfileComponent implements OnInit {
             // console.log(tData)
             this.instas = tData;
             this.loadingCount++; 
-            if(this.loadingCount >= 3 ){
+            if(this.loadingCount >= 2 ){
               this.isSocialLoading = false;
               
             }
@@ -72,17 +72,17 @@ export class PlayerProfileComponent implements OnInit {
           err=>{
 
           })
-          this.ApiRoutingService.getuTube$(this.p_player_name)
-          .subscribe(uData => {
-            this.youTube = uData;
-            this.loadingCount++;
-            if(this.loadingCount >= 3) {
-              this.isSocialLoading = false;
-            }
-          },
-          err => {
+          // this.ApiRoutingService.getuTube$(this.p_player_name)
+          // .subscribe(uData => {
+          //   this.youTube = uData;
+          //   this.loadingCount++;
+          //   if(this.loadingCount >= 3) {
+          //     this.isSocialLoading = false;
+          //   }
+          // },
+          // err => {
 
-          })
+          // })
         },
         err=>{
           this.Router.navigateByUrl("/notFound", { skipLocationChange: true });
