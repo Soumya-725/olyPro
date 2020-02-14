@@ -1,9 +1,16 @@
 const insta = require('instagram-web-api')
 const latestTweets = require('latest-tweets')
 const https = require('https')
-const dotenv = require('dotenv');
 
+const dotenv = require('dotenv');
 dotenv.config();
+
+const YouTube = require('youtube-node');
+const youTube = new YouTube();
+youTube.setKey(process.env.YOUTUBE_AUTH);
+
+
+
 const { INSTAUSER, 
         INSTAPASS,
         YOUTUBEAPI 
@@ -67,20 +74,15 @@ exports.searchAll = (req,res)=>{
 }
 
 exports.getUTube =  (req, res) =>{
-        const options = 'https://www.googleapis.com/youtube/v3/search?key='+YOUTUBEAPI+'&channelId=UCZrV-3Mvk8KPX1wyCqs7vGw&order=date&part=snippet&type=video,id&maxResults=10';
-        https.get(options, (resp) => {
-         console.log('statusCode:', resp.statusCode)
-
-        resp.on('data', (d) => {
-            
-            const dt = process.stdout.write(d).valueOf()
-            res.send(dt)
-        })
-
-        }).on('error', (e) => {
-             console.error(e);
-        })
-}
+    youTube.search(req.params.keyword, 10, ((error, result)=> {
+        if (error) {
+          console.log(error);
+        }
+        else {
+          res.send(result.items, null, 10);
+        }
+      })    
+    )}
 
 exports.getTwit = async (req, res) =>{
     await latestTweets(`${req.params.username}`, (err, tweets)=>{

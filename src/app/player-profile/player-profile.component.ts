@@ -14,10 +14,12 @@ export class PlayerProfileComponent implements OnInit {
   p_sport_id: any;
   p_sport_name: any;
   p_player_name: any;
+  p_player_image: any;
   p_twitter_username: any;
   twitters: any[];
   p_insta_username: any;
   instas: any[];
+  youTube: any[];
   isYoutubeHide:boolean = false;
   isTwitterHide:boolean = false;
   isInstaHide:boolean = false;
@@ -41,12 +43,14 @@ export class PlayerProfileComponent implements OnInit {
           this.p_player_name =  this.player_details.player_name;
           this.p_twitter_username = this.player_details.player_det_twitter;
           this.p_insta_username = this.player_details.player_det_insta;
+          this.p_player_image = this.player_details.player_image;
+
           this.ApiRoutingService.getTwit$(this.p_twitter_username)
           .subscribe(tData =>{
             // console.log(tData)
             this.twitters = tData;
             this.loadingCount++; 
-            if(this.loadingCount >= 2 ){
+            if(this.loadingCount >= 3 ){
               this.isSocialLoading = false;
             }
           },
@@ -59,11 +63,22 @@ export class PlayerProfileComponent implements OnInit {
             // console.log(tData)
             this.instas = tData;
             this.loadingCount++; 
-            if(this.loadingCount >= 2 ){
+            if(this.loadingCount >= 3 ){
               this.isSocialLoading = false;
             }
           },
           err=>{
+
+          })
+          this.ApiRoutingService.getuTube$(this.p_player_name)
+          .subscribe(uData => {
+            this.youTube = uData;
+            this.loadingCount++;
+            if(this.loadingCount >= 3) {
+              this.isSocialLoading = false;
+            }
+          },
+          err => {
 
           })
         },

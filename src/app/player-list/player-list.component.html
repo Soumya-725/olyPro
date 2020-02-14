@@ -4,7 +4,7 @@
         <span class="name">{{ sport_name }}</span>
     </div>
     <div class="game-players-list" *ngFor="let player of players" routerLink="/player/{{player.player_id}}">
-        <span class="picture1"><img src="../../assets/user-1.png" alt="player1" height="60px"></span>
+        <span class="picture1"><img src="{{player.player_image}}" alt="player1" height="60px"></span>
         <div class="player-name">
             <span class="players">{{ player.player_name }}</span>
             <!-- <span class="playersName">Name 1</span> -->
