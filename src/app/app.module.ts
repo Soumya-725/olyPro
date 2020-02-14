@@ -39,7 +39,8 @@ import { HeaderComponent } from './header/header.component';
       { path:"**", component:NotFoundComponent }
     ])
   ],
-  providers: [ApiRoutingService],
+  providers: [ApiRoutingService,
+            ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

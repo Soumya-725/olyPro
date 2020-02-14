@@ -11,6 +11,7 @@ export class PlayerListComponent implements OnInit {
   sport_id: any;
   players:any[];
   sport_name: any;
+  newText:string;
 
   constructor(private route: ActivatedRoute, private ApiRoutingService: ApiRoutingService,private Router:Router) { }
 
@@ -25,7 +26,20 @@ export class PlayerListComponent implements OnInit {
           this.sport_name = this.players[0].sport_name;
         },   
         err=>{
-          
+          this.Router.navigateByUrl("/notFound", { skipLocationChange: true });
         })
+  }
+  color(t){
+    this.newText = '';
+    let nt = t.split(' ');
+    for(let i = 0; i < nt.length; i++) {
+      if (i % 2 == 0) {
+        this.newText += nt[i];
+      } else {
+        this.newText += `<span class="page-1"> ${nt[i]} </span>`;
+      }
+    }
+    return this.newText;
+  
   }
 }

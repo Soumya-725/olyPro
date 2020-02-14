@@ -28,7 +28,7 @@ export class SportsListComponent implements OnInit {
       if (i % 2 == 0) {
         this.newText += nt[i];
       } else {
-        this.newText += `<a> ${nt[i]} </a>`;
+        this.newText += `<span class="page-1"> ${nt[i]} </span>`;
       }
     }
     return this.newText;
