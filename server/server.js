@@ -8,9 +8,9 @@ const corsConfig = {
                   optionsSuccessStatus: 200
                 }
 
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 const app = express();
-dotenv.config();
+// dotenv.config();
 
 
 const apiAllRoutes = require('./routes/apiRoutes');
@@ -20,7 +20,7 @@ app.use(morgan('dev'));
 app.use('/api', apiAllRoutes);
 
 
-const port = process.env.PORT || 8080;
+const port =  8080;
 app.listen(port, () => {
   console.log(`Listening port is ${ port }`);
 });
