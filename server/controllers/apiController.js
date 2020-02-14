@@ -6,8 +6,8 @@ const latestTweets = require('latest-tweets')
 const YouTube = require('youtube-node');
 const youTube = new YouTube();
 
-youTube.setKey('AIzaSyCwY8yJMczRAEHjWcTRskFf5fxrHD6fA');
 
+// youTube.setKey('AIzaSyC21gqnc2mgRM868_nMwBeaiHQ0L2QISwQ');
 
 const { mySQLConn } = require('../dbConnectivity/dbConnection');
 
@@ -38,17 +38,6 @@ exports.getAllPlayersInSport = async (req, res) => {
     )
 }
 
-// exports.getInsta = (req, res) =>{
-//     (async () => {
-//         await iClient.login()
-//             await iClient.getUserByUsername({username:req.params.username})
-//             .then(
-//                 val => res.send(val.edge_owner_to_timeline_media.edges),
-//                 err=> console.log(err)
-//             )
-        
-//       })()
-// }
 exports.getInsta = async (req, res) => {
     await iClient.login()
     await iClient.getUserByUsername({username:req.params.username})
@@ -92,9 +81,3 @@ exports.getTwit = async (req, res) =>{
         else console.log(err)    
     })
 }
-
-
-
-
-
-
