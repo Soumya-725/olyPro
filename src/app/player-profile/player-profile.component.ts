@@ -57,7 +57,6 @@ export class PlayerProfileComponent implements OnInit {
           err=>{
 
           })
-          console.log(this.p_insta_username)
           this.ApiRoutingService.getInsta$(this.p_insta_username)
           .subscribe(tData =>{
             // console.log(tData)
