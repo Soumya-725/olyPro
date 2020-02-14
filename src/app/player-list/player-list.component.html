@@ -7,7 +7,7 @@
         <div class="player-list" *ngFor="let player of players" routerLink="/player/{{player.player_id}}">
         <div class="player-name ">
             <div class="img-wrap">
-            <img src="{{p_player_image}}" alt="hi">
+            <img src="{{player.player_image}}" alt="hi">
             </div>
             <span class="player-name-txt" [innerHTML]="color(player.player_name)"></span>
         </div>
