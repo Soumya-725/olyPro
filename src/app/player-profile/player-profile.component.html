@@ -31,7 +31,7 @@
                     <li *ngFor="let twit of twitters" class="single-twit">
                         <h3 class="twitedBy"><a href="https://twitter.com/{{ twit.username }}">{{ twit.username }}</a></h3>
                         <p>{{ twit.content }}</p>
-                        <a href=""><img src="{{twit.image}}" alt="" class="twit-content"></a>
+                        <a href="{{ twit.url }}"><img src="{{twit.image}}" alt="" class="twit-content"></a>
                     </li>
                 </ul>
             </div>

@@ -69,14 +69,14 @@ exports.searchAll = async (req,res) => {
 exports.getUTube = async  (req, res) =>{
     await youTube.search(req.params.keyword, 10, ((error, result) => {
         if (error) return console.log(error);
-          return res.send(result.items, null, 10);
+        return res.send(result.items, null, 10);
       })    
     )
 }
 
 exports.getTwit = async (req, res) =>{
     await latestTweets(`${req.params.username}`, (err, tweets) => {
-        if(!err) res.send(tweets);
-        else console.log(err)    
+        if(!err) return res.send(tweets);
+        return console.log(err)    
     })
 }
