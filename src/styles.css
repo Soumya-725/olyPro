@@ -270,6 +270,39 @@ footer{
     margin: 0 15px;
 }
 
+/* Search Bar */
+
+.search-bar{
+    position: relative;
+}
+.search-result{
+    position: absolute;
+    top:110%;
+    left: 0;
+    width: 96%;
+    padding: 10px 10px;
+    background-color: #fff;
+    max-height: 400px;
+    overflow: scroll;
+    box-shadow: 3px 3px 3px #444444;
+    border:  1px solid #00000005;
+}
+.right {
+    float: right;
+
+}
+.search-result ul{
+    list-style: none;
+}
+.search-result ul li{
+    padding: 8px 5px;
+    margin: 3px 0;
+    border-bottom: 1px solid #00000010;
+    cursor: pointer;
+}
+
+/* END */
+
 @media screen and (max-width: 1260px){
     .sports-card-container{
         max-width: 800px;

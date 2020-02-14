@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiRoutingService } from '../api-routing.service';
 
 @Component({
   selector: 'index-header-with-search',
@@ -6,11 +8,55 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index-header-with-search.component.css']
 })
 export class IndexHeaderWithSearchComponent implements OnInit {
+  searchData: any;
+  allSearchRes: any[];
+  allTypeNames: any;
+  types: any;
+  isSearchResultBox:boolean;
+  isNodataFound:boolean = false;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private ApiRoutingService: ApiRoutingService, private router: Router) { }
 
   ngOnInit() {
-    // This is a test message
+  
+      
+  }
+
+  search($event) {
+    if($event.target.value === ''){
+      this.isSearchResultBox = false;
+      this.isNodataFound = false;
+      
+    }
+    else{
+      this.ApiRoutingService.getSearch$($event.target.value)
+      .subscribe( allSearchRes =>{
+        
+        if(allSearchRes[0].length !=0 ){
+          this.isSearchResultBox = true;
+          this.isNodataFound = false;
+          this.allSearchRes = allSearchRes[0];
+        }
+        else{
+          this.isSearchResultBox = false;
+          this.isNodataFound = true;
+        }
+
+      },
+      err => {
+        this.isSearchResultBox = false;
+      })
+    }
+    
+  }
+
+  reDirect(type,id){
+    if(type === 'player'){
+      this.router.navigate(['/player/'+id])
+    }
+    else{
+      this.router.navigate(['/players/'+id])
+    }
   }
 
 }
