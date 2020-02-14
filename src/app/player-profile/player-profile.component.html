@@ -18,8 +18,8 @@
         </div>
     </div>
 
-    <div class="player-accounts">
-        <div class="player-account-single">
+    <div class="player-accounts" >
+        <div class="player-account-single" >
             <div>
                 <img src="../../assets/twitter.png" alt="" class="img-accounts">
                 <span class="txt-twitter">Twitter</span>
@@ -31,18 +31,20 @@
                     <li *ngFor="let twit of twitters" class="single-feed">
                         <h3 class="twitedBy"><a href="https://twitter.com/{{ twit.username }}">{{ twit.username }}</a></h3>
                         <p>{{ twit.content }}</p>
-                        <a href=""><img src="{{twit.image}}" alt="" class="twit-content"></a>
+                        <a href="{{twit.url}}"><img src="{{twit.image}}" alt="" class="twit-content"></a>
                     </li>
                 </ul>
             </div>
             </div>
         </div>
-                <div class="player-account-single">
+                <div class="player-account-single" >
+                    
             <div>
                 <img src="../../assets/youtube.png" alt="youtube" class="img-accounts">
                 <span class="txt-youtube">YouTube</span>
             </div>
             <div id="youtube-content" class="content">
+                
                 <img src="../../assets/youtube-loading-animation.gif" alt="" class="socialLoading" *ngIf="isSocialLoading">
                 <ul>
                     <li *ngFor="let Utube of youTube" class="single-feed">
@@ -58,7 +60,7 @@
 
             </div>
         </div>
-        <div class="player-account-single">
+        <div class="player-account-single" >
             <div>
                 <img src="../../assets/instagram.png" alt="" class="img-accounts">
                 <span class="txt-insta">Instagram</span>
