@@ -1,26 +1,21 @@
 const insta = require('instagram-web-api')
 const latestTweets = require('latest-tweets')
-const https = require('https')
 
 const dotenv = require('dotenv');
 dotenv.config();
 
 const YouTube = require('youtube-node');
 const youTube = new YouTube();
-youTube.setKey(process.env.YOUTUBE_AUTH);
+youTube.setKey('AIzaSyC21gqnc2mgRM868_nMwBeaiHQ0L2QISwQ');
 
 
 
-const { INSTAUSER, 
-        INSTAPASS,
-        YOUTUBEAPI 
-    } = process.env
-    
+
 const { mySQLConn } = require('../dbConnectivity/dbConnection');
 
 const iClient = new insta({ 
-                            username:INSTAUSER,
-                            password:INSTAPASS
+                            username:'',
+                            password:''
                         })
 
 
