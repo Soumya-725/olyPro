@@ -29,11 +29,7 @@
                     <li *ngFor="let twit of twitters" class="single-feed">
                         <h3 class="twitedBy"><a href="https://twitter.com/{{ twit.username }}">{{ twit.username }}</a></h3>
                         <p>{{ twit.content }}</p>
-<<<<<<< HEAD
-                        <a href="{{ twit.url }}"><img src="{{twit.image}}" alt="" class="twit-content"></a>
-=======
-                        <a href="{{twit.url}}"><img src="{{twit.image}}" alt="" class="twit-content"></a>
->>>>>>> 58ccf2e435fc4fd5333bbb828308047ce8876f9e
+                        <a href="{{ twit.url }}"><img src="{{ twit.image }}" alt="" class="twit-content"></a>
                     </li>
                 </ul>
             </div>
