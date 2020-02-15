@@ -1,5 +1,6 @@
 import { ApiRoutingService } from './../api-routing.service';
 import { Component, OnInit } from '@angular/core';
+import { ColorDividerService } from '../color-divider.service';
 
 @Component({
   selector: 'sports-list',
@@ -10,7 +11,7 @@ export class SportsListComponent implements OnInit {
   newText = '';
   allSports: any[]
 
-  constructor(private ApiRoutingService: ApiRoutingService) { }
+  constructor(private ApiRoutingService: ApiRoutingService, private color_div: ColorDividerService) { }
 
   ngOnInit() {
     this.ApiRoutingService.getSports$()
@@ -21,18 +22,7 @@ export class SportsListComponent implements OnInit {
           console.log(error);
         })
   }
-  color(t){
-    this.newText = '';
-    let nt = t.split(' ');
-    for(let i = 0; i < nt.length; i++) {
-      if (i % 2 == 0) {
-        this.newText += nt[i];
-      } else {
-        this.newText += `<span class="page-1"> ${nt[i]} </span>`;
-      }
-    }
-    return this.newText;
-  
+  color(t) {
+    return this.color_div.color(t);
   }
-
 }

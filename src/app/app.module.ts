@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { PlayerProfileComponent } from './player-profile/player-profile.component';
 import { HeaderComponent } from './header/header.component';
+import { ColorDividerService } from './color-divider.service';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { HeaderComponent } from './header/header.component';
     ])
   ],
   providers: [ApiRoutingService,
-            ],
+            ColorDividerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

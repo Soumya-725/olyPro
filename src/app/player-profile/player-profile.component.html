@@ -5,16 +5,14 @@
         <div class="pages">
             <span class="page-1 clickable" routerLink="/players/{{p_sport_id}}">{{ p_sport_name }}</span>
             <span > / </span>
-            <span class="page-2 clickable">{{ p_player_name }} </span>
+            <span class="page-2 clickable" >{{ p_player_name }} </span>
         </div>
 
         <div class="player-name">
             <div class="img-wrap">
             <img src="{{p_player_image}}" alt="hi">
             </div>
-            <span class="player-name-txt">
-                {{ p_player_name }} 
-            </span>
+            <span class="player-name-txt" [innerHTML]="color(p_player_name)"></span>
         </div>
     </div>
 
@@ -74,11 +72,11 @@
                 <ul>
                     <li *ngFor="let insta of instas" class="single-feed">
                         <div class="insta-content">
-                            <h3 style="width: 100%">Caption: </h3><p>{{insta.node.edge_media_to_caption.edges[0].node.text}}</p>
+                            <h3 style="width: 100%; padding-left: 4px;"> Caption: </h3><p>{{insta.node.edge_media_to_caption.edges[0].node.text}}</p>
                             <a href="https://www.instagram.com/p/{{insta.node.shortcode}}/">
                                 <div class="insta-img-conteiner">
                                 <img src="{{insta.node.display_url}}" alt="" width="100%">
-                                <div class="img-blur">
+                                <div class="img-blur insta-like-comment">
                                     <span class="insta-like">&#9829; {{ insta.node.edge_liked_by.count }} </span>
                                     <span class="insta-comment">&#10054; {{ insta.node.edge_media_to_comment.count }}</span>
                                 </div>
