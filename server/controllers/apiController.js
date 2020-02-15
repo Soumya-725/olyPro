@@ -6,7 +6,8 @@ const latestTweets = require('latest-tweets')
 const YouTube = require('youtube-node');
 const youTube = new YouTube();
 
-youTube.setKey('AIzaSyC21gqnc2mgRM868_nMwBeaiHQ0L2QISwQ');
+
+// youTube.setKey('AIzaSyC21gqnc2mgRM868_nMwBeaiHQ0L2QISwQ');
 
 const { mySQLConn } = require('../dbConnectivity/dbConnection');
 

@@ -115,12 +115,12 @@ a{
 .player-name .img-wrap {
     overflow: hidden;
     border-radius: 50%;
-    width: 60px;
-    border: 1px solid black;
-    height: 60px;
+    width: 55px;
+    box-shadow: 0 2px 4px #00000060;
+    height: 55px;
 }
 .player-name .img-wrap img {
-    width: 60px;
+    max-width: 60px;
 }
 .player-name4 {
     display: inline-block;
@@ -215,7 +215,8 @@ a{
     height: 100%;
 }
 .player-name img {
-    width: 60px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     border-color: rgb(210, 213, 213);
     border-style: solid;
@@ -267,12 +268,12 @@ div.player-account-single {
     max-width: 100%;
     margin-top: 10px;
 }
-.single-twit{
+.single-feed{
     border-bottom:1px solid #38444D;
     padding: 10px 0;
     
 }
-.single-twit p{
+.single-feed p{
     max-width: 360px;
     overflow: hidden;
     text-overflow: ellipsis;

@@ -53,11 +53,11 @@ export class PlayerProfileComponent implements OnInit {
             if(this.loadingCount >= 2 ){
               this.isSocialLoading = false;
             }
+            
           },
           err=>{
-
+           
           })
-          console.log(this.p_insta_username)
           this.ApiRoutingService.getInsta$(this.p_insta_username)
           .subscribe(tData =>{
             // console.log(tData)
@@ -67,10 +67,11 @@ export class PlayerProfileComponent implements OnInit {
               this.isSocialLoading = false;
               
             }
+          
             
           },
           err=>{
-
+         
           })
           // this.ApiRoutingService.getuTube$(this.p_player_name)
           // .subscribe(uData => {
@@ -79,9 +80,10 @@ export class PlayerProfileComponent implements OnInit {
           //   if(this.loadingCount >= 3) {
           //     this.isSocialLoading = false;
           //   }
+            
           // },
           // err => {
-
+           
           // })
         },
         err=>{
