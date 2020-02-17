@@ -22,6 +22,7 @@ export class SportsListComponent implements OnInit {
       .subscribe(data => {
         this.allSports = data[0];
         this.hideloading = true;
+        this.scroll = this.scroll + 1;
       },
         error => {
           console.log(error);
@@ -31,13 +32,13 @@ export class SportsListComponent implements OnInit {
     return this.color_div.color(text);
   }
   onScroll() {
-    this.scroll++;
     this.hideloading = false;
     this.ApiRoutingService.getSports$(this.scroll)
       .subscribe(data1 => {
         if (data1[0].length != 0) {
           this.allSports = this.allSports.concat(data1[0]);
           this.hideloading = true;
+          this.scroll = this.scroll + 1;
         }
         else {
           this.scrollLoadingOff = false;

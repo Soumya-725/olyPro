@@ -67,14 +67,14 @@ export class PlayerProfileComponent implements OnInit {
 
               })
         }
-        // this.ApiRoutingService.getuTube$(this.p_player_name)
-        // .subscribe(uData => {
-        //   this.youTube = uData;
-        //this.isYoutubeLoading = false;
-        // },
-        // err => {
+        this.ApiRoutingService.getuTube$(this.p_player_name)
+        .subscribe(uData => {
+          this.youTube = uData;
+        this.isYoutubeLoading = false;
+        },
+        err => {
 
-        // })
+        })
       },
         err => {
           this.Router.navigateByUrl("/notFound", { skipLocationChange: true });
