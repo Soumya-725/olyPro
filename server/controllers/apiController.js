@@ -1,13 +1,9 @@
 const insta = require('instagram-web-api')
 const latestTweets = require('latest-tweets')
-
-
-
 const YouTube = require('youtube-node');
 const youTube = new YouTube();
-
-
-// youTube.setKey('AIzaSyC21gqnc2mgRM868_nMwBeaiHQ0L2QISwQ');
+// youTube.setKey.YOUTUBE_AUTH();
+//  youTube.setKey('AIzaSyCBDJGMkp8BGH8EaBaFL-K8i15tYE8Ky30');
 
 const { mySQLConn } = require('../dbConnectivity/dbConnection');
 
@@ -68,9 +64,9 @@ exports.searchAll = async (req,res) => {
 }
 
 exports.getUTube = async  (req, res) =>{
-    await youTube.search(req.params.keyword, 10, ((error, result) => {
+    await youTube.search(req.params.keyword, 7, ((error, result) => {
         if (error) return console.log(error);
-        return res.send(result.items, null, 10);
+        return res.send(result.items, null, 7);
       })    
     )
 }
