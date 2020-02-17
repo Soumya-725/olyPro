@@ -279,6 +279,10 @@ div.player-account-single {
     padding: 10px 0;
     
 }
+.youTube-feed{
+    border-bottom: 1px solid #38444D;
+    max-width: 80%;
+}
 .single-feed p{
     max-width: 360px;
     overflow: hidden;
@@ -401,7 +405,11 @@ footer{
     border-bottom: 1px solid #00000010;
     cursor: pointer;
 }
-
+.youtube-body{
+    max-width: 360px;
+    border-bottom: 1px solid #00000010;
+    padding-left: 10px;
+}
 /* END */
 
 @media screen and (max-width: 1260px){
