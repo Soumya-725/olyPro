@@ -1,7 +1,11 @@
 <div class="sports-container">
-    <div class="sports-card-container">
+    <div class="sports-card-container search-results" infiniteScroll [infiniteScrollDistance]="2"
+        [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
         <div class="sports-card" *ngFor="let sport of allSports" routerLink="/players/{{sport.sport_id}}">
             <h1 [innerHTML]="color(sport.sport_name)"></h1>
         </div>
+        <div class="scrollAnimation" *ngIf="!hideloading&&scrollLoadingOff"><img
+                src="https://d33wubrfki0l68.cloudfront.net/7ad98dc27fb7d45a2570730eda827673d6028969/c1127/images/loading.gif"
+                alt=""></div>
     </div>
 </div>

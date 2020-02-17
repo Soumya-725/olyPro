@@ -278,7 +278,7 @@ div.player-account-single {
 .twitter-content{
     background-color: #141E28 !important;
     color: #fff;
-    padding: 5px 8px 0px 8px;
+    padding: 0 8px 0px 8px;
 
 }
 .twitter-content .twit-content{
@@ -400,6 +400,14 @@ footer{
     overflow: scroll;
     box-shadow: 3px 3px 3px #444444;
     border:  1px solid #00000005;
+}
+.scrollAnimation{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.scrollAnimation img{
+    height: 80px;
 }
 .right {
     float: right;

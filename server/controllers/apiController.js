@@ -18,6 +18,7 @@ const iClient = new insta({
 
 
 exports.getAllSports = async (req, res) => {
+
     await mySQLConn.query(
         'CALL allSports()',
         (err, rows) => {
@@ -25,6 +26,14 @@ exports.getAllSports = async (req, res) => {
             return res.sendStatus(400).send(err);
         }
     );
+};
+exports.getAllSportslitwise = async (req, res) => {
+    let lastrow = req.params.lastrow * 9;
+    mySQLConn.query(`call allSportsLimitWise(${lastrow}, 9)`, (err, rows) => {
+        if (!err)
+            return res.status(200).json(rows);
+        return res.sendStatus(400).send(err);
+    });
 };
 
 exports.getAllPlayersInSport = async (req, res) => {

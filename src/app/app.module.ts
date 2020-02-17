@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { PlayerProfileComponent } from './player-profile/player-profile.component';
 import { HeaderComponent } from './header/header.component';
 import { ColorDividerService } from './color-divider.service';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
@@ -31,17 +32,17 @@ import { ColorDividerService } from './color-divider.service';
   ],
   imports: [
     BrowserModule,
-  
+    InfiniteScrollModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: "", component:HomeComponent },
-      { path: "players/:sports_id", component: PlayerListComponent},
-      { path:"player/:player_id", component: PlayerProfileComponent },
-      { path:"**", component:NotFoundComponent }
+      { path: "", component: HomeComponent },
+      { path: "players/:sports_id", component: PlayerListComponent },
+      { path: "player/:player_id", component: PlayerProfileComponent },
+      { path: "**", component: NotFoundComponent }
     ])
   ],
   providers: [ApiRoutingService,
-            ColorDividerService],
+    ColorDividerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

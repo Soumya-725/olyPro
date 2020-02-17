@@ -2,91 +2,99 @@
 <div class="upper-div">
     <div class="pages">
         <span class="page-1 clickable" routerLink="/players/{{p_sport_id}}">{{ p_sport_name }}</span>
-        <span > / </span>
-        <span class="page-2 clickable" >{{ p_player_name }} </span>
+        <span> / </span>
+        <span class="page-2 clickable">{{ p_player_name }} </span>
     </div>
 
     <div class="player-name">
         <div class="img-wrap">
-        <img src="{{p_player_image}}" alt="">
+            <img src="{{p_player_image}}" alt="">
         </div>
         <span class="player-name-txt" [innerHTML]="color(p_player_name)"></span>
     </div>
 </div>
 <div class="player-profile-page-container">
-    
-<div>
 
-    <div class="social-loading-wrapper" *ngIf="isLoading">
-        <img src="https://www.gillsc.com/themes/simple/images/gears-200.gif" alt="" class="socialLoading" >
-    </div>
-    <div class="player-accounts" *ngIf="!isLoading">
-        <div class="player-account-single" [hidden]="this.p_twitter_username == null? true : false">
-            <div>
-                <img src="../../assets/twitter.png" alt="" class="img-accounts">
-                <span class="txt-twitter">Twitter</span>
-            </div>
-            <div class="content">
-                <img src="https://www.3nions.com/wp-content/uploads/2020/01/comp_1.gif" alt="" class="socialLoading socialsLoad" *ngIf="isTwitterLoading">
-                <div class="twitter-content">
-                <ul>
-                    <li *ngFor="let twit of twitters" class="single-feed">
-                        <h3 class="twitedBy"><a href="https://twitter.com/{{ twit.username }}">{{ twit.username }}</a></h3>
-                        <p>{{ twit.content }}</p>
-                        <a href="{{ twit.url }}"><img src="{{ twit.image }}" alt="" class="twit-content"></a>
-                    </li>
-                </ul>
-            </div>
-            </div>
+    <div>
+
+        <div class="social-loading-wrapper" *ngIf="isLoading">
+            <img src="https://www.gillsc.com/themes/simple/images/gears-200.gif" alt="" class="socialLoading">
         </div>
-         <div class="player-account-single" >   
-            <div>
-                <img src="../../assets/youtube.png" alt="youtube" class="img-accounts">
-                <span class="txt-youtube">YouTube</span>
+        <div class="player-accounts" *ngIf="!isLoading">
+            <div class="player-account-single" [hidden]="this.p_twitter_username == null? true : false">
+                <div>
+                    <img src="../../assets/twitter.png" alt="" class="img-accounts">
+                    <span class="txt-twitter">Twitter</span>
+                </div>
+                <div class="content">
+                    <img src="https://www.3nions.com/wp-content/uploads/2020/01/comp_1.gif" alt=""
+                        class="socialLoading socialsLoad" *ngIf="isTwitterLoading">
+                    <div class="twitter-content">
+                        <ul>
+                            <li *ngFor="let twit of twitters" class="single-feed">
+                                <h3 class="twitedBy"><a
+                                        href="https://twitter.com/{{ twit.username }}">{{ twit.username }}</a></h3>
+                                <p>{{ twit.content }}</p>
+                                <a href="{{ twit.url }}"><img src="{{ twit.image }}" alt="" class="twit-content"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div id="youtube-content" class="content">
-                
-                <img src="../../assets/youtube-loading-animation.gif" alt="" class="socialLoading socialsLoad" *ngIf="isYoutubeLoading">
-                <ul>
-                    <li *ngFor="let Utube of youTube" class="single-feed">
-                        <a href="https://www.youtube.com/watch?v={{ Utube.id.videoId }}"><img src="{{Utube.snippet.thumbnails.high.url}}" alt="youtubeimage"></a>
-                        <div class="title-youtube">
-                            {{ Utube.snippet.title }}
-                            <div class="description-youtube">
-                                {{ Utube.snippet.description}}
+            <div class="player-account-single">
+                <div>
+                    <img src="../../assets/youtube.png" alt="youtube" class="img-accounts">
+                    <span class="txt-youtube">YouTube</span>
+                </div>
+                <div id="youtube-content" class="content">
+
+                    <img src="../../assets/youtube-loading-animation.gif" alt="" class="socialLoading socialsLoad"
+                        *ngIf="isYoutubeLoading">
+                    <ul>
+                        <li *ngFor="let Utube of youTube" class="single-feed">
+                            <a href="https://www.youtube.com/watch?v={{ Utube.id.videoId }}"><img
+                                    src="{{Utube.snippet.thumbnails.high.url}}" alt="youtubeimage"></a>
+                            <div class="title-youtube">
+                                {{ Utube.snippet.title }}
+                                <div class="description-youtube">
+                                    {{ Utube.snippet.description}}
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
 
+                </div>
             </div>
-        </div>
-        <div class="player-account-single" [hidden]="this.p_insta_username == null? true : false" >
-            <div>
-                <img src="../../assets/instagram.png" alt="" class="img-accounts">
-                <span class="txt-insta">Instagram</span>
-            </div>
-            <div class="content">
-                <img src="https://cdn.dribbble.com/users/2475489/screenshots/9553468/1-instagram.gif" alt="" class="socialLoading socialsLoad" *ngIf="isInstaLoading">
-                <ul>
-                    <li *ngFor="let insta of instas" class="single-feed">
-                        <div class="insta-content">
-                            <h3 style="width: 100%; padding-left: 4px;"> Caption: </h3><p>{{insta.node.edge_media_to_caption.edges[0].node.text}}</p>
-                            <a href="https://www.instagram.com/p/{{insta.node.shortcode}}/">
-                                <div class="insta-img-conteiner">
-                                <img src="{{insta.node.display_url}}" alt="" width="100%">
-                                <div class="img-blur insta-like-comment">
-                                    <span class="insta-like">&#9829; {{ insta.node.edge_liked_by.count }} </span>
-                                    <span class="insta-comment">&#10054; {{ insta.node.edge_media_to_comment.count }}</span>
-                                </div>
-                                </div>
-                            </a>
+            <div class="player-account-single" [hidden]="this.p_insta_username == null? true : false">
+                <div>
+                    <img src="../../assets/instagram.png" alt="" class="img-accounts">
+                    <span class="txt-insta">Instagram</span>
+                </div>
+                <div class="content">
+                    <img src="https://cdn.dribbble.com/users/2475489/screenshots/9553468/1-instagram.gif" alt=""
+                        class="socialLoading socialsLoad" *ngIf="isInstaLoading">
+                    <ul>
+                        <li *ngFor="let insta of instas" class="single-feed">
+                            <div class="insta-content">
+                                <h3 style="width: 100%; padding-left: 4px;"> Caption: </h3>
+                                <p>{{insta.node.edge_media_to_caption.edges[0].node.text}}</p>
+                                <a href="https://www.instagram.com/p/{{insta.node.shortcode}}/">
+                                    <div class="insta-img-conteiner">
+                                        <img src="{{insta.node.display_url}}" alt="" width="100%">
+                                        <div class="img-blur insta-like-comment">
+                                            <span class="insta-like">&#9829; {{ insta.node.edge_liked_by.count }}
+                                            </span>
+                                            <span class="insta-comment">&#10054;
+                                                {{ insta.node.edge_media_to_comment.count }}</span>
+                                        </div>
+                                    </div>
+                                </a>
 
-                        </div>
-                    </li>
-                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>

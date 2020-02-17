@@ -1,9 +1,10 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+
 
 const router = express.Router();
 
-const { getAllSports, 
+const { getAllSports,
+    getAllSportslitwise, 
         getInsta, 
         getAllPlayersInSport, 
         getPlayerDetails, 
@@ -12,7 +13,8 @@ const { getAllSports,
         getTwit 
     } = require('../controllers/apiController');
 
-router.get('/sports', getAllSports);
+router.get('/sports/', getAllSports);
+router.get('/sports/nextpage=:lastrow', getAllSportslitwise);
 router.get('/sports/:sport_id', getAllPlayersInSport);
 router.get('/player/:player_id', getPlayerDetails);
 router.get('/search/:data', searchAll);

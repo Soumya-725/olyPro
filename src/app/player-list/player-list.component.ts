@@ -10,24 +10,24 @@ import { ColorDividerService } from '../color-divider.service';
 })
 export class PlayerListComponent implements OnInit {
   sport_id: any;
-  players:any[];
+  players: any[];
   sport_name: any;
 
-  constructor(private route: ActivatedRoute, private ApiRoutingService: ApiRoutingService, private Router:Router, private color_div: ColorDividerService) { }
+  constructor(private route: ActivatedRoute, private ApiRoutingService: ApiRoutingService, private Router: Router, private color_div: ColorDividerService) { }
 
   ngOnInit() {
     this.route.paramMap
-      .subscribe( params=> {
+      .subscribe(params => {
         this.sport_id = params.get('sports_id')
       })
     this.ApiRoutingService.getPlayers$(this.sport_id)
-      .subscribe( players => {
+      .subscribe(players => {
         this.players = players[0];
         this.sport_name = this.players[0].sport_name;
-      },   
-      err=> {
-        this.Router.navigateByUrl("/notFound", { skipLocationChange: true });
-      })
+      },
+        err => {
+          this.Router.navigateByUrl("/notFound", { skipLocationChange: true });
+        })
   }
 
   color(t) {

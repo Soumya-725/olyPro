@@ -12,50 +12,50 @@ export class IndexHeaderWithSearchComponent implements OnInit {
   allSearchRes: any[];
   allTypeNames: any;
   types: any;
-  isSearchResultBox:boolean;
-  isNodataFound:boolean = false;
+  isSearchResultBox: boolean;
+  isNodataFound: boolean = false;
 
   constructor(private ApiRoutingService: ApiRoutingService, private router: Router) { }
 
   ngOnInit() {
-  
-      
+
+
   }
 
   search($event) {
-    if($event.target.value === ''){
+    if ($event.target.value === '') {
       this.isSearchResultBox = false;
       this.isNodataFound = false;
-      
-    }
-    else{
-      this.ApiRoutingService.getSearch$($event.target.value)
-      .subscribe( allSearchRes =>{
-        
-        if(allSearchRes[0].length !=0 ){
-          this.isSearchResultBox = true;
-          this.isNodataFound = false;
-          this.allSearchRes = allSearchRes[0];
-        }
-        else{
-          this.isSearchResultBox = false;
-          this.isNodataFound = true;
-        }
 
-      },
-      err => {
-        this.isSearchResultBox = false;
-      })
     }
-    
+    else {
+      this.ApiRoutingService.getSearch$($event.target.value)
+        .subscribe(allSearchRes => {
+
+          if (allSearchRes[0].length != 0) {
+            this.isSearchResultBox = true;
+            this.isNodataFound = false;
+            this.allSearchRes = allSearchRes[0];
+          }
+          else {
+            this.isSearchResultBox = false;
+            this.isNodataFound = true;
+          }
+
+        },
+          err => {
+            this.isSearchResultBox = false;
+          })
+    }
+
   }
 
-  reDirect(type,id){
-    if(type === 'player'){
-      this.router.navigate(['/player/'+id])
+  reDirect(type, id) {
+    if (type === 'player') {
+      this.router.navigate(['/player/' + id])
     }
-    else{
-      this.router.navigate(['/players/'+id])
+    else {
+      this.router.navigate(['/players/' + id])
     }
   }
 
