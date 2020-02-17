@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ApiRoutingService } from '../api-routing.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class IndexHeaderWithSearchComponent implements OnInit {
   isSearchResultBox:boolean;
   isNodataFound:boolean = false;
 
-  constructor(private route: ActivatedRoute, private ApiRoutingService: ApiRoutingService, private router: Router) { }
+  constructor(private ApiRoutingService: ApiRoutingService, private router: Router) { }
 
   ngOnInit() {
   
