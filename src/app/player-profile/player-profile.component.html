@@ -10,7 +10,7 @@
         <div class="img-wrap">
         <img src="{{p_player_image}}" alt="">
         </div>
-        <span class="player-name-txt" [innerHTML]="color(p_player_name)"></span>
+        <span *ngIf="p_player_name != undefined" class="player-name-txt" [innerHTML]="color(p_player_name)"></span>
     </div>
 </div>
 <div class="player-profile-page-container">
