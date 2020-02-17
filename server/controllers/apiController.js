@@ -24,8 +24,8 @@ exports.getAllSports = async (req, res) => {
     );
 };
 exports.getAllSportslitwise = async (req, res) => {
-    let lastrow = req.params.lastrow * 9;
-    mySQLConn.query(`call allSportsLimitWise(${lastrow}, 9)`, (err, rows) => {
+    let lastrow = req.params.lastrow * 12;
+    mySQLConn.query(`call allSportsLimitWise(${lastrow}, 12)`, (err, rows) => {
         if (!err)
             return res.status(200).json(rows);
         return res.sendStatus(400).send(err);
