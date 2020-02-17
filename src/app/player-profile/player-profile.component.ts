@@ -25,11 +25,10 @@ export class PlayerProfileComponent implements OnInit {
   isInstaLoading: boolean = true;
   isLoading: boolean = true;
   loadingCount: number;
-  
+
   constructor(private route: ActivatedRoute, private ApiRoutingService: ApiRoutingService, private Router: Router, private color_div: ColorDividerService) { }
-  
+
   ngOnInit() {
-<<<<<<< HEAD
     this.loadingCount = 0;
     this.route.paramMap
       .subscribe(params => {
@@ -80,66 +79,10 @@ export class PlayerProfileComponent implements OnInit {
         err => {
           this.Router.navigateByUrl("/notFound", { skipLocationChange: true });
         })
-=======
-  this.loadingCount = 0;
-  this.route.paramMap
-  .subscribe( params=> {
-  this.player_id = params.get('player_id');
-  })
-  
-  this.ApiRoutingService.getPlayerDet$(this.player_id)
-  .subscribe(player_details => {
-  this.player_details = player_details[0][0];
-  this.p_sport_id = this.player_details.sport_id;
-  this.p_sport_name = this.player_details.sport_name;
-  this.p_player_name = this.player_details.player_name;
-  this.p_twitter_username = this.player_details.player_det_twitter;
-  this.p_insta_username = this.player_details.player_det_insta;
-  this.p_player_image = this.player_details.player_image;
-  this.isLoading = false;
-  if(this.p_twitter_username != null){
-  this.ApiRoutingService.getTwit$(this.p_twitter_username)
-  .subscribe(tData => {
-  // console.log(tData)
-  this.twitters = tData;
-  this.isTwitterLoading = false;
-  },
-  err=>{
-  })
->>>>>>> 743ae6d7e5becc00b143fe9eef9ba40eeddda55c
   }
-  if(this.p_insta_username != null){
-  this.ApiRoutingService.getInsta$(this.p_insta_username)
-  .subscribe(tData => {
-  // console.log(tData)
-  this.instas = tData;
-  this.isInstaLoading = false;
-  },
-  err=> {
-  })
-  }
-  this.ApiRoutingService.getuTube$(this.p_player_name)
-  .subscribe(uData => {
-  this.youTube = uData;
-  this.isYoutubeLoading = false;
-  },
-  err => {
-  })
-  },
-  err=> {
-  this.Router.navigateByUrl("/notFound", { skipLocationChange: true });
-  })
-  }
-  
-  color(t) {
-<<<<<<< HEAD
-    return this.color_div.color(t);
-  }
-}
 
-=======
+
+color(t) {
   return this.color_div.color(t);
-  }
-  }
-  
->>>>>>> 743ae6d7e5becc00b143fe9eef9ba40eeddda55c
+}
+}

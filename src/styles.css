@@ -68,7 +68,7 @@ a{
 .sports-card-container {
     display: inline-flex;
     flex-wrap: wrap;
-    max-width: 1230px;
+    max-width: 1180px;
 }
 .sports-card {
     cursor: pointer;
@@ -166,7 +166,7 @@ a{
 
 .player-profile-page-container {
     background-color: #f2f2f2;
-    margin:0 0 100px 180px;
+    margin:0 0 100px 360px;
     overflow: auto;
  
 }
@@ -278,11 +278,7 @@ div.player-account-single {
 .twitter-content{
     background-color: #141E28 !important;
     color: #fff;
-<<<<<<< HEAD
-    padding: 0 8px 0px 8px;
-=======
     padding: 0px 8px 0px 8px;
->>>>>>> 743ae6d7e5becc00b143fe9eef9ba40eeddda55c
 
 }
 .twitter-content .twit-content{

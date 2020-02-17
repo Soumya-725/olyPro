@@ -13,7 +13,7 @@ export class SportsListComponent implements OnInit {
   allSports: any[]
   scroll: number = 0;
   hideloading: boolean;
-  scrollLoadingOff: boolean;
+  scrollLoadingOff: boolean = true;
 
   constructor(private ApiRoutingService: ApiRoutingService, private color_div: ColorDividerService) { }
 
@@ -40,7 +40,7 @@ export class SportsListComponent implements OnInit {
           this.hideloading = true;
         }
         else {
-          this.scrollLoadingOff = true;
+          this.scrollLoadingOff = false;
         }
       },
         error => {
