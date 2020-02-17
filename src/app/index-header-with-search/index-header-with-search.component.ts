@@ -18,8 +18,6 @@ export class IndexHeaderWithSearchComponent implements OnInit {
   constructor(private ApiRoutingService: ApiRoutingService, private router: Router) { }
 
   ngOnInit() {
-
-
   }
 
   search($event) {

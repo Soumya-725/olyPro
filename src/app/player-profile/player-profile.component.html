@@ -51,13 +51,16 @@
                     <img src="../../assets/youtube-loading-animation.gif" alt="" class="socialLoading socialsLoad"
                         *ngIf="isYoutubeLoading">
                     <ul>
-                        <li *ngFor="let Utube of youTube" class="single-feed">
+                        <li *ngFor="let Utube of youTube" class="single-feed youtube-feed">
                             <a href="https://www.youtube.com/watch?v={{ Utube.id.videoId }}"><img
-                                    src="{{Utube.snippet.thumbnails.high.url}}" alt="youtubeimage"></a>
+                                    src="{{Utube.snippet.thumbnails.high.url}}" alt="youtubeimage"
+                                    class="youtube-body"></a>
                             <div class="title-youtube">
-                                {{ Utube.snippet.title }}
+                                <h3>Title :</h3>
+                                <p id="para-youtube">{{ Utube.snippet.title }}</p>
                                 <div class="description-youtube">
-                                    {{ Utube.snippet.description}}
+                                    <h3>Description :</h3>
+                                    <p class="des-youtube">{{ Utube.snippet.description }}</p>
                                 </div>
                             </div>
                         </li>

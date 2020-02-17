@@ -422,10 +422,30 @@ footer{
     border-bottom: 1px solid #00000010;
     cursor: pointer;
 }
-.youtube-body{
-    max-width: 360px;
+.youtube-feed{
+    padding: 0px !important;
+}
+.youtube-body {
+    max-width: 377px;
     border-bottom: 1px solid #00000010;
-    padding-left: 10px;
+}
+.title-youtube h3{
+    margin-left: 3px;
+    color: rgb(23, 24, 23);
+    padding: 5px;
+}
+.description-youtube h3 {
+    margin-left: 3px;
+    color: rgb(24, 26, 24);
+    padding: 5px;
+}
+#para-youtube {
+    margin-left:  3px;
+    padding: 3px;
+}
+.des-youtube {
+    margin-left:  3px !important;
+    padding: 3px !important;
 }
 /* END */
 

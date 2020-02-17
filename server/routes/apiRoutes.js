@@ -1,17 +1,15 @@
 const express = require('express');
-
-
 const router = express.Router();
 
 const { getAllSports,
-    getAllSportslitwise, 
-        getInsta, 
-        getAllPlayersInSport, 
-        getPlayerDetails, 
-        searchAll, 
-        getUTube,
-        getTwit 
-    } = require('../controllers/apiController');
+    getAllSportslitwise,
+    getInsta,
+    getAllPlayersInSport,
+    getPlayerDetails,
+    searchAll,
+    getUTube,
+    getTwit
+} = require('../controllers/apiController');
 
 router.get('/sports/', getAllSports);
 router.get('/sports/nextpage=:lastrow', getAllSportslitwise);

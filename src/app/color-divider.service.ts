@@ -1,4 +1,3 @@
-
 export class ColorDividerService {
   newText: any;
   constructor() { }
@@ -6,7 +5,7 @@ export class ColorDividerService {
   color(t: string) {
     this.newText = '';
     let nt = t.split(' ');
-    for(let i = 0; i < nt.length; i++) {
+    for (let i = 0; i < nt.length; i++) {
       if (i == 0) {
         this.newText += nt[i];
       } else {
