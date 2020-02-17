@@ -20,11 +20,13 @@ export class PlayerProfileComponent implements OnInit {
   p_insta_username: any;
   instas: any[];
   youTube: any[];
-  isYoutubeHide: boolean = false;
-  isTwitterHide: boolean = false;
-  isInstaHide: boolean = false;
-  isSocialLoading: boolean = true;
+  isYoutubeLoading:boolean = true;
+  isTwitterLoading:boolean = true;
+  isInstaLoading:boolean = true;
+  isLoading: boolean = true;
   loadingCount: number;
+
+
 
   constructor(private route: ActivatedRoute, private ApiRoutingService: ApiRoutingService, private Router: Router, private color_div: ColorDividerService) { }
 
@@ -44,41 +46,33 @@ export class PlayerProfileComponent implements OnInit {
         this.p_twitter_username = this.player_details.player_det_twitter;
         this.p_insta_username = this.player_details.player_det_insta;
         this.p_player_image = this.player_details.player_image;
-
-        this.ApiRoutingService.getTwit$(this.p_twitter_username)
+        this.isLoading = false;
+        if(this.p_twitter_username != null){
+          this.ApiRoutingService.getTwit$(this.p_twitter_username)
         .subscribe(tData => {
           // console.log(tData)
           this.twitters = tData;
-          this.loadingCount++; 
-          if(this.loadingCount >= 2 ) {
-            this.isSocialLoading = false;
-          }
-          
+          this.isTwitterLoading = false;
         },
         err=>{
           
         })
+        }
+        if(this.p_insta_username != null){
         this.ApiRoutingService.getInsta$(this.p_insta_username)
         .subscribe(tData => {
           // console.log(tData)
           this.instas = tData;
-          this.loadingCount++; 
-          if(this.loadingCount >= 2 ) {
-            this.isSocialLoading = false;
-            
-          }
+          this.isInstaLoading = false;
         },
         err=> {
-        
+          
         })
+      }
         // this.ApiRoutingService.getuTube$(this.p_player_name)
         // .subscribe(uData => {
         //   this.youTube = uData;
-        //   this.loadingCount++;
-        //   if(this.loadingCount >= 3) {
-        //     this.isSocialLoading = false;
-        //   }
-          
+        //this.isYoutubeLoading = false;
         // },
         // err => {
           

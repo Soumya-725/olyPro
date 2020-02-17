@@ -1,29 +1,33 @@
 <app-header></app-header>
-<div class="player-profile-page-container">
-<div>
-    <div class="upper-div">
-        <div class="pages">
-            <span class="page-1 clickable" routerLink="/players/{{p_sport_id}}">{{ p_sport_name }}</span>
-            <span > / </span>
-            <span class="page-2 clickable" >{{ p_player_name }} </span>
-        </div>
-
-        <div class="player-name">
-            <div class="img-wrap">
-            <img src="{{p_player_image}}" alt="hi">
-            </div>
-            <span class="player-name-txt" [innerHTML]="color(p_player_name)"></span>
-        </div>
+<div class="upper-div">
+    <div class="pages">
+        <span class="page-1 clickable" routerLink="/players/{{p_sport_id}}">{{ p_sport_name }}</span>
+        <span > / </span>
+        <span class="page-2 clickable" >{{ p_player_name }} </span>
     </div>
 
-    <div class="player-accounts" >
-        <div class="player-account-single" >
+    <div class="player-name">
+        <div class="img-wrap">
+        <img src="{{p_player_image}}" alt="">
+        </div>
+        <span class="player-name-txt" [innerHTML]="color(p_player_name)"></span>
+    </div>
+</div>
+<div class="player-profile-page-container">
+    
+<div>
+
+    <div class="social-loading-wrapper" *ngIf="isLoading">
+        <img src="https://www.gillsc.com/themes/simple/images/gears-200.gif" alt="" class="socialLoading" >
+    </div>
+    <div class="player-accounts" *ngIf="!isLoading">
+        <div class="player-account-single" [hidden]="this.p_twitter_username == null? true : false">
             <div>
                 <img src="../../assets/twitter.png" alt="" class="img-accounts">
                 <span class="txt-twitter">Twitter</span>
             </div>
             <div class="content">
-                <img src="https://www.3nions.com/wp-content/uploads/2020/01/comp_1.gif" alt="" class="socialLoading" *ngIf="isSocialLoading">
+                <img src="https://www.3nions.com/wp-content/uploads/2020/01/comp_1.gif" alt="" class="socialLoading socialsLoad" *ngIf="isTwitterLoading">
                 <div class="twitter-content">
                 <ul>
                     <li *ngFor="let twit of twitters" class="single-feed">
@@ -35,15 +39,14 @@
             </div>
             </div>
         </div>
-                <div class="player-account-single" >
-                    
+         <div class="player-account-single" >   
             <div>
                 <img src="../../assets/youtube.png" alt="youtube" class="img-accounts">
                 <span class="txt-youtube">YouTube</span>
             </div>
             <div id="youtube-content" class="content">
                 
-                <img src="../../assets/youtube-loading-animation.gif" alt="" class="socialLoading" *ngIf="isSocialLoading">
+                <img src="../../assets/youtube-loading-animation.gif" alt="" class="socialLoading socialsLoad" *ngIf="isYoutubeLoading">
                 <ul>
                     <li *ngFor="let Utube of youTube" class="single-feed">
                         <a href="https://www.youtube.com/watch?v={{ Utube.id.videoId }}"><img src="{{Utube.snippet.thumbnails.high.url}}" alt="youtubeimage"></a>
@@ -58,13 +61,13 @@
 
             </div>
         </div>
-        <div class="player-account-single" >
+        <div class="player-account-single" [hidden]="this.p_insta_username == null? true : false" >
             <div>
                 <img src="../../assets/instagram.png" alt="" class="img-accounts">
                 <span class="txt-insta">Instagram</span>
             </div>
             <div class="content">
-                <img src="https://cdn.dribbble.com/users/2475489/screenshots/9553468/1-instagram.gif" alt="" class="socialLoading" *ngIf="isSocialLoading">
+                <img src="https://cdn.dribbble.com/users/2475489/screenshots/9553468/1-instagram.gif" alt="" class="socialLoading socialsLoad" *ngIf="isInstaLoading">
                 <ul>
                     <li *ngFor="let insta of instas" class="single-feed">
                         <div class="insta-content">
