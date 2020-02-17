@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -7,7 +8,7 @@
 }
 body{
     background-color: #f2f2f2;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Roboto';
     font-size: 16px;
     color: #444444;
     font-weight: normal;
@@ -18,6 +19,7 @@ a{
 }
 .wrapper{
     min-height: calc(100vh - 70px);
+    overflow: auto;
 }
 .index-header{
     overflow: auto;
@@ -87,7 +89,6 @@ a{
     margin-left: 360px;
     font-weight: bold;
     font-size: 32px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }.game {
     color: #444444; 
 }
@@ -165,19 +166,38 @@ a{
 
 .player-profile-page-container {
     background-color: #f2f2f2;
+    margin:0 0 100px 360px;
+    overflow: auto;
+ 
+}
+.social-loading-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 100px;
+    z-index: 1000;
+    height: 450px;
 }
 .player-profile-page-container div {
     max-width: 1300px;
+    position: relative;
+    overflow: auto;
+ 
+}
+.socialsLoad{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 .upper-div {
-    margin: 65px 0 0 10px;
+    margin: 65px 0 0 360px;
 }
 .pages span a {
     text-decoration: none;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 15.5px;
     font-weight: 300;
 }
@@ -208,11 +228,7 @@ a{
  padding-bottom: 30px;
 }
 .socialLoading {
-    position:absolute;
-    top: 0;
-    bottom: 0;
-    width: 378px;
-    height: 100%;
+    position: absolute;
 }
 .player-name img {
     width: 55px;
@@ -223,14 +239,12 @@ a{
     border-width: 1px;
 }
 .player-name-txt-list {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
     margin-left:10px ;
     transform: translateY(20px);
     cursor: pointer;
 }
 .player-name-txt {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 32px;
     margin-left:10px ;
     transform: translateY(10px);
@@ -255,7 +269,6 @@ div.player-account-single {
     color: rgb(170, 0, 116);
 }
 .player-account-single div span {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 32px;
     font-weight: 550;
     position: relative;
@@ -411,5 +424,11 @@ footer{
 @media screen and (max-width: 1260px){
     .sports-card-container{
         max-width: 800px;
+    }
+    .upper-div {
+        margin: 65px 0 0 180px;
+    }
+    .player-profile-page-container {
+        margin:0 0 100px 180px;
     }
 }
